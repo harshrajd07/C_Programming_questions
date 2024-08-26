@@ -1,0 +1,12 @@
+Programming questions 
+
+1. write a  c program to swap the two numbers using third variable . 
+input : a = 10 ; b = 20 ; c=a ; a=b; b=c ;
+output: a = 20 ; b = 10 ;
+
+2. write a  c program to swap the two numbers without using third variable . 
+input : a = 10 ; b = 20 ; 
+output: a = 20 ; b = 10 ;
+
+3. write a c program to perform addition of two variables without using + operaror .
+ 
