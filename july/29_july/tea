@@ -1,0 +1,41 @@
+/*#include<stdio.h>
+int main(){
+    int n,q,tp,ap;
+    char ch;
+    printf("\t\tWelcome and Menu:\t\t\n");
+    printf("Welcome to our Tea Stall Counter! Our menu:\n");
+    printf("1. Tea --------------------- Rs. 10\n");
+    printf("2. Coffee ------------------ Rs. 20\n");
+    printf("3. Cold coffee ------------- Rs. 50\n");
+    printf("4. Exit\n");
+    start:
+    printf("Choose by entering a number (1-4):.\n");
+    scanf("%d",&n);
+    if(n==1){printf("How many cups of refreshing tea? \n");}
+    else if(n==2){printf("How many cups of aromatic coffee? \n");}
+    else if(n==3){printf("How many cups of chilled cold coffee? \n");}
+    else{printf("Invalid Input\n");}
+    printf("User enters quantity: \n");
+    scanf("%d",&q);
+    /*if(n==1){n*=10;}
+    else if(n==2){n*=20;}
+    else if(n==3){n*=50;}
+    else{printf("Invalid input.\n");}
+    tp=n*q;
+    printf("Total for [%d] cup(s): Rs. [%d].\n",q,);
+    printf("Enter your payment amount: Rs. ");
+    scanf("%d",&ap);
+    if(ap-tp>0){printf("Change: Rs. [%d].\n",ap-tp);}
+    else if(ap-tp<0){printf("Pay remaining amount of Rs. %d.\n",ap-tp);}
+    else{printf("Change is Zero. \n");}
+    printf("Explore more or finalize? (Type 'Y' for Yes or 'N' for No): \n");
+    scanf("%c",ch);
+    if(ch=='Y' || ch=='y'){printf("Certainly, let's explore.");
+    goto start;}
+    else if(ch=='n' || ch=='N'){printf("Thank you for visiting! We look forward to serving you again soon!\n");}
+    else{printf("Invalid input. \n");}
+    
+    
+    return 0;
+}
+*/
