@@ -1,0 +1,264 @@
+#include<stdio.h>
+#include<string.h>
+int main()
+{
+int i,vowel=0,consonant=0,special=0,digits=0;
+char s[100];
+printf("Enter string : ");
+scanf("%s",s);
+for(i=0;i<strlen(s);i++)
+{
+    if(s[i]=='A'||s[i]=='a'||s[i]=='E'||s[i]=='e'||
+    s[i]=='I'||s[i]=='i'||s[i]=='O'||s[i]=='o'||s[i]=='U'||s[i]=='u')
+    {
+        vowel++;
+    }
+    
+    else if(s[i]>=0&&s[i]<=47||s[i]>=58&&s[i]<=64||
+    s[i]>=91&&s[i]<=96||s[i]>=123&&s[i]<=127)
+    {
+        special++;
+    }
+
+    else if(s[i]>'0'&&s[i]<'9')
+    {
+        digits++;
+    }
+}
+printf("vowel count is : %d\n",vowel);
+printf("consonant count is : %d\n",strlen(s)-vowel-special-digits);
+printf("digits count is : %d\n",digits);
+printf("Special Characters is : %d\n",special);
+
+}
+--------------------------------------------------------------------------------------------
+#include<stdio.h>
+#include<string.h>
+int main(){
+    char s[100];
+    int i;
+    printf("Enter a String : ");
+    scanf("%s",s);
+    for(i=0;i<strlen(s);i++)
+    {
+    }
+    printf("The reverse of the String is :");
+    while(i) printf("%c",s[--i]);
+    //for(i--;i>=0;i--)printf("%c",s[i]);
+    
+}
+-----------------------------------------------------------------------------
+#include<stdio.h>
+#include<string.h>
+int main(){
+    char s[100]; 
+    int Temp;
+    int i, j, len;
+    printf("Enter any string : ");
+    scanf("%s",s);
+    len = strlen(s);
+    for(i=0;i<len;i++)
+    {
+        for(j=0;j<(len-1); j++)
+        {
+            if(s[j]>s[j+1])
+            {
+                Temp=s[j];
+                s[j]=s[j+1];
+                s[j+1] =Temp;
+            }
+        }
+    }
+    printf("After Sorting the String is : %s",s);
+    return 0;
+}
+----------------------------------------------------------------------------------
+#include<stdio.h>
+#include<conio.h>
+#include<string.h>
+int main(){
+    int i,j,n;
+    char name[100],temp;
+    printf("Befor sorting the array: ");
+    scanf("%s",name);
+    n=strlen(name);
+    for(i=0;i<n;i++){
+        for(j=i+1;j<n;j++){
+            if(name[i]>name[j]){
+            temp=name[i];
+            name[i]=name[j];
+            name[j]=temp;
+            }
+        }
+    }
+    
+printf("\nAfter sorting the array: %s",name);
+
+return 0;
+}
+-----------------------------------------------------------------------
+#include<stdio.h>
+#include<conio.h>
+#include<string.h>
+int main(){
+    char s1[100],s2[100];
+    printf("Enter The string .");scanf("%s",s1);
+    strcpy(s2,s1);
+    strrev(s2);
+    printf(stricmp(s1,s2)==0?"Pallindrome":"Not a Pallindrome");
+    return 0;
+}
+------------------------------------------------------------------------------------
+#include <stdio.h>
+#include <string.h>
+int main(){
+    char s[1000];  
+    int i,j,k,count=0,n;
+    printf("Enter the string : ");
+    scanf("%s",s);
+    for(j=0;s[j];j++);
+	 n=j; 
+	printf(" frequency count character in string:\n");
+    for(i=0;i<n;i++)  
+    {
+     	count=1;
+    	if(s[i]){
+ 		  for(j=i+1;j<n;j++){   
+	        if(s[i]==s[j]){
+            count++;
+            s[j]='\0';
+	     	}
+	      }  
+	      printf(" '%c' = %d \n",s[i],count);
+       }
+ 	} 
+    return 0;
+}
+----------------------------------------------------------------------------------
+#include <stdio.h>
+#include<string.h>
+int main(){
+    char str[100];
+    int i,n,s=0;
+    printf("Enter a string: ");
+    scanf("%s",str);
+    for(i=0;str[i]!='\0';i++){
+        if((str[i]>='0') && (str[i]<='9'))
+        {
+            s=s+(str[i]-'0');
+        }
+    }
+    printf("Sum of the numbers is : %d",s);
+    
+    return 0;
+}
+-------------------------------------------------------------------------------
+#include <stdio.h>
+int main() {
+    char str[100];
+    int count;
+    int visited[100] = {0};
+    printf("Enter a String: ");
+    scanf("%s", str);
+    printf("Resulting string is: ");
+    for (int i = 0; str[i] != '\0'; i++) {
+        if (visited[i] == 1) {
+            continue;
+        }
+        count = 1;
+        for (int j = i + 1; str[j] != '\0'; j++) {
+            if (str[i] == str[j]) {
+                count++;
+                visited[j] = 1;
+            }
+        }
+        if (count > 1) {
+            printf("%c%d", str[i], count);
+        }
+    }
+    printf("\n");
+    return 0;
+}
+---------------------------------------------------------------------------
+#include <stdio.h>
+#include <ctype.h>
+int main(){
+    char str[100];
+    int i = 0;
+    printf("Enter a String: ");
+    scanf("%[^\n]", str);
+    if (str[0] >= 'a' && str[0] <= 'z'){
+        str[0] = str[0] - 'a' + 'A';
+    }
+    while(str[i] != '\0'){
+        if(str[i] == ' ' && str[i + 1] >= 'a' && str[i + 1] <= 'z') {
+            str[i + 1] = str[i + 1] - 'a' + 'A';
+        }
+        i++;
+    }
+    printf("Sum Of the numbers is: %s\n", str);
+
+    return 0;
+}
+---------------------------------------------------------------------------------
+#include <stdio.h>
+#include<string.h>
+int main(){
+   char s[50];
+   int f;
+   int c=0;
+   printf("Enter the string: ");
+   scanf("%s",s);
+   int l=strlen(s);
+   for(int i=0;i<l;i++)
+   {
+       for(int j=i+1;j<l;j++)
+       {
+           if(s[i]==s[j])
+           {
+               int y=j,f=1;
+               for(int k=i;k<y;k++)
+               {
+                   if(s[k]!=s[y])
+                   {
+                       f=0;
+                       break;
+                   }
+                   --y;
+               }
+               if(f==1)
+               {
+                   c++;
+                   for(int a=i;a<=j;a++)
+                   {
+                       printf("%c",s[a]);
+                   }
+                   printf("\n");
+               }
+           }
+       }
+   }
+   printf("Total pallindromic substrings are : %d",c);
+    return 0;
+}
+--------------------------------------------------------------------------------
+#include<stdio.h>
+#include<ctype.h>
+int main(){
+    char s[100];
+    int i,j;
+    printf("Enter a String: ");
+    scanf("%s",s);
+    for(i=0;s[i]!='\0';i++)
+    {
+    for(j=0;j<i/2;j++)
+    {
+    if(tolower(s[j])!=tolower(s[i-j-1]))
+    {printf("Not a pallindrome"); return 0;}
+    }
+    printf("Pallindrome");
+    return 0;
+    }
+    
+}
+-----------------------------------------------------------------------------------
