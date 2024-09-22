@@ -1,0 +1,164 @@
+13-09-24
+
+Set A [ Program 1 ] Point 10
+Write a C program to check  a string contains only digits or not.(5 marks)
+Sample input  : 12345
+Sample output : The string contains only digits.
+
+Sample input : 45A7
+Sample output : The string contains non-digit characters.
+Sample Input
+45A7
+Sample Output
+The string contains non-digit characters.
+-------------------------------------------------------------------------------------------
+Set A [ Program 2 ] Point 10
+Write a C program to check  a given year is a leap year or not using function.(10 marks)
+-> create int main() function
+
+-> create bool isLeapYear(int year) function. this function will take year as parameter suppied by main function and will check the year is leap year or not. if year is leap then return true otherwise false.
+
+Sample input : Enter a year: 2024
+
+Sample output : 2024 is a leap year.
+Sample Input
+2024
+Sample Output
+2024 is a leap year.
+-----------------------------------------------------------------------------------------
+Set A [ Program 3 ] Point 10
+Develop a C program that simulates a simple bank account system. Users can create accounts, deposit money, withdraw money, and check their balances. Implement separate functions for these operations. Take the initial balance as Rs.2000.(15 marks)
+
+Condition For deposit :
+
+* If the user want to deposit 0 or negetive amount then print "Invalid amount to deposit"
+
+
+Condition For withdraw : 
+
+* If the user want to withdraw 0 or negetive amount then print "Invalid amount to withdrawal"
+
+* If the user given amount is greater than the balance then print "Insufficient Funds"
+
+SAMPLE INPUT AND SAMPLE OUTPUT :
+--------------------------------
+
+--- Bank Account Menu ---
+1. Create Account
+2. Deposit Money
+3. Withdraw Money
+4. Check Balance
+5. Exit
+Enter your choice: 1
+
+Account created successfully with initial balance of Rs. 2000.
+Sample Input
+-
+Sample Output
+-
+-----------------------------------------------------------------------------------------
+Set B [ Program 1 ] Point 10
+Write a C program to print all twisted prime number from array.(15 marks)
+Twisted Prime number means a number itself is prime number and the reverse of that number also prime number.
+Examle : 2,5,7,11,23 
+-----> here 2,5,7,11 are twisted prime numbers but 23 is not twisted prime number.
+Sample input : int arr[]={1,2,3,4,5,7,11,15,23};
+
+Sample output : twisted prime numbers are : 2,3,5,7,11
+Sample Input
+1,2,3,4,5,7,11,15,23
+Sample Output
+ twisted prime numbers are : 2,3,5,7,11
+---------------------------------------------------------------------------------------
+Set B [ Program 2 ] Point 10
+Write a c program to print all the frequency of character present in string .
+--------
+Sample input: String s=" Hello Everyone"
+
+Sample output  :-
+The frequency of H is 1
+The frequency of e is 3
+The frequency of l is 2
+The frequency of o is 2
+The frequency of   is 1  --------THIS IS FOP CHECKING THE SPACE COUNT 
+The frequency of E is 1
+The frequency of v is 1
+The frequency of r is 1
+The frequency of y is 1
+The frequency of n is 1
+Sample Input
+Hello Everyone
+Sample Output
+The frequency of H is 1
+The frequency of e is 3
+The frequency of l is 2
+The frequency of o is 2
+The frequency of   is 1  --------THIS IS FOP CHECKING THE SPACE COUNT 
+The frequency of E is 1
+The frequency of v is 1
+The frequency of r is 1
+The frequency of y is 1
+The frequency of n is 1
+-------------------------------------------------------------------------------------------
+Set B [ Program 3 ] Point 10
+Write a function to find the average of elements in a floating-point array using function.(10 marks)
+-> create int main() function.
+
+-> create float getMid(int arr[]) function.
+Sample input:
+Size of the array: 5
+Array elements: 10.5 20.5 30.5 40.5 50.5
+
+Sample output:
+Average of the elements in the array: 30.5
+Sample Input
+10.5 20.5 30.5 40.5 50.5
+Sample Output
+Average of the elements in the array: 30.5
+-----------------------------------------------------------------------------------------
+Set C [ Program 2 ] Point 10
+Write  a program  in c to convert a given string to an integer using function.(10 marks)
+-> create int main() function.
+
+int stringToInt(char str[]) function.
+
+Example:-
+
+Sample input: Enter a string: "12345"
+
+Sample output: Integer value: 12345
+Sample Input
+ Enter a string: "12345"
+Sample Output
+Integer value: 12345
+--------------------------------------------------------------------------------------
+Set C [ Program 1 ] Point 10
+ Write a C program to check  two strings are anagrams of each other or not using String (15 marks)
+
+Sample input:
+             First string : listen
+             Second string: silent
+
+Sample output: The strings are anagrams.
+
+
+Sample input:
+             First string : hello
+             Second string: world
+
+Sample output: The strings are not anagrams.
+----------------------------------------------------------------------------------------
+Set C [ Program 3 ] Point 10
+ Write a program in C to find the number occurring odd number of times in an array.
+--------
+Sample input :
+The given array is : 8 3 8 5 4 3 4 3 5 1
+
+Sample output :
+The element odd number of times is : 3 1
+Sample Input
+ 8 3 8 5 4 3 4 3 5 1
+Sample Output
+3 1
+----------------------------------------------------------------------------------------
+

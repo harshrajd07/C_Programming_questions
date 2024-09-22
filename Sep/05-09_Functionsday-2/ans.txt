@@ -1,0 +1,615 @@
+#include <stdio.h>
+#include <stdbool.h>
+#include <string.h>
+bool isPalindromeString(char str[]){
+    int i,l=strlen(str);
+    for (i = 0; i < l / 2; i++) {
+        if (str[i] != str[l - i - 1]) {
+            return false;
+        }
+    }
+    return true;
+}
+int main() {
+    char str[100];
+    printf("Enter a string: ");
+    scanf("%s", str);
+    if (isPalindromeString(str)) {
+        printf("The string is a palindrome.\n");
+    } else {
+        printf("The string is not a palindrome.\n");
+    }
+
+    return 0;
+}
+
+---------------------------------------------------------------------------------------------------------------------------
+
+#include <stdio.h>
+#include <stdbool.h>
+#include <string.h>
+#define CHAR_COUNT 256
+bool isAnagram(char str1[], char str2[]) {
+    if (strlen(str1) != strlen(str2)) return false;
+    int count[CHAR_COUNT] = {0};
+    for (int i = 0; str1[i] && str2[i]; i++) {
+        count[(int)str1[i]]++;
+        count[(int)str2[i]]--;
+    }
+    for (int i = 0; i < CHAR_COUNT; i++) {
+        if (count[i] != 0) return false;
+    }
+
+    return true;
+}
+
+int main() {
+    char str1[100], str2[100];
+    printf("Enter the first string: ");
+    scanf("%s", str1);
+    printf("Enter the second string: ");
+    scanf("%s", str2);
+    printf("The strings are %sanagrams.\n", isAnagram(str1, str2) ? "" : "not ");
+    return 0;
+}
+
+-----------------------------------------------------------------------------------------------------
+#include <stdio.h>
+#include <stdbool.h>
+bool isContainsDigits(char str[]) {
+    for (int i = 0; str[i] != '\0'; i++) {
+        if (str[i] < '0' || str[i] > '9') { 
+            return false;
+        }
+    }
+    return true;
+}
+int main() {
+    char str[100];
+    printf("Enter a string: ");
+    scanf("%s", str);
+    if (isContainsDigits(str)) {
+        printf("The string contains only digits.\n");
+    } else {
+        printf("The string contains non-digit characters.\n");
+    }
+
+    return 0;
+}
+--------------------------------------------------------------------------------------------
+#include <stdio.h>
+int arraySum(int arr[], int size) {
+    int sum = 0;
+    for (int i = 0; i < size; i++) {
+        sum += arr[i];
+    }
+    return sum;
+}
+int main(){
+    int size;
+    printf("Enter the size of the array: ");
+    scanf("%d",&size);
+    int arr[size];
+    printf("Enter %d elements of the array: ",size);
+    for (int i = 0;i<size; i++) {
+        scanf("%d",&arr[i]);
+    }
+    int sum=arraySum(arr, size);
+    printf("Sum of all elements in the array: %d\n", sum);
+
+    return 0;
+}
+----------------------------------------------------------------------------------------
+#include<stdio.h>
+int getLength(char str[]){
+    int length;
+    for(length=0;str[length]!='\0';length++);
+    return length;
+}
+int main(){
+    char str[100];
+    printf("input any string: ");
+    scanf("%s",str);
+    printf("Length of the string: %d\n ",getLength(str));
+    return 0;
+}
+--------------------------------------------------------------------------------------------
+#include<stdio.h>
+int biggestnumber(int a,int b,int c){
+    if(a>b && a>c){
+        printf("%d",a);
+    }
+    else if(b>a && b>c){
+        printf("%d",b);
+    }
+    else("%d",c);
+}
+int main(){
+    int a,b,c;
+    printf("Input three positive number: ");
+    scanf("%d %d %d",&a,&b,&c);
+    printf("The biggest number is : ");
+    int num=biggestnumber(a,b,c);
+}
+--------------------------------------------------------------------------------------------------
+#include <stdio.h>
+#include <stdbool.h>
+bool isEvenOrOdd(int n){
+    return (n % 2 == 0);
+}
+int main() {
+    int number;
+    bool result;
+    printf("Input any number: ");
+    scanf("%d",&number);
+    result = isEvenOrOdd(number);
+    if (result) {
+        printf("The entered number is even.\n");
+    } else {
+        printf("The entered number is odd.\n");
+    }
+
+    return 0;
+}
+-------------------------------------------------------------------------------------
+#include<stdio.h>
+#include<stdbool.h>
+bool isLeapYear(int year){
+    if((year%4==0 && year%100!=0) ||(year % 400 ==0)){
+        return true;
+    }
+    else{
+        return false;
+        
+    }
+}
+int main(){
+    int year;
+    printf("Enter a year: ");
+    scanf("%d",&year);
+    if(isLeapYear(year)){
+    printf("%d is a leap year.\n", year);
+    }
+    else{printf("%d is not a leap year.\n",year);
+    }
+    return 0;
+}
+-----------------------------------------------------------------------------------
+#include<stdio.h>
+int square(int n)
+{
+     return(n*n);
+}
+int main(){
+     int n, ans;
+     printf("Input any number for square: ");
+     scanf("%d",&n);
+     ans = square(n);
+     printf("The Square of %d is : %d ", n,ans);
+}
+
+-------------------------------------------------------------------------------------
+#include<stdio.h>
+int naturalNumberSum(int a){
+    return (a * (a + 1)) / 2;
+}
+int main(){
+    int n;
+    printf("Input n value: ");
+    scanf("%d",&n);
+    printf("The sum of %d natural numbers is %d\n", n, naturalNumberSum(n));
+    return 0;
+}
+-------------------------------------------------------------------------------------
+#include<stdio.h>
+void swap(int *a,int *b){
+    int temp;
+    temp=*a;
+    *a=*b;
+    *b=temp;
+}
+int main(){
+    int n1,n2;
+    printf("Input 1st number:");
+    scanf("%d",&n1);
+    printf("Input 2nd number:");
+    scanf("%d",&n2);
+    printf("Before swapping: n1=%d,n2=%d\n",n1,n2);
+    swap(&n1,&n2);
+    printf("After swapping: n1=%d,n2=%d",n1,n2);
+    
+    return 0;
+}
+----------------------------------------------------------------------------------------------
+#include <stdio.h>
+void create_acc();
+void deposit_amt(int);
+void withdraw_amt(int);
+void check_bal();
+void exitFun();
+
+int curr_bal = 2000, flag = 1;
+int main()
+{
+  int choice, amt = 0;
+  do
+  {
+    printf("\n-------------------------------------------------------");
+    printf("\n----- Bank Account Menu -----");
+    printf("\n1. Create Account");
+    printf("\n2. Deposit Money");
+    printf("\n3. Withdraw Money");
+    printf("\n4. Check Balance");
+    printf("\n5. Exit");
+
+    printf("\nEnter your choice : ");
+    scanf("%d", &choice);
+    switch (choice)
+    {
+    case 1:
+      if (flag)
+      {
+        create_acc();
+        flag = 0;
+      }
+      else
+      {
+        printf("\nAccount already created!!!");
+      }
+      break;
+
+    case 2:
+      if (!flag)
+      {
+        printf("\nEnter amount to deposit : ");
+        scanf("%d", &amt);
+        deposit_amt(amt);
+      }
+      else
+      {
+        printf("\nPlease create your account!!!");
+      }
+
+      break;
+    case 3:
+
+      if (!flag)
+      {
+        printf("\nEnter amount to withdraw : ");
+        scanf("%d", &amt);
+        withdraw_amt(amt);
+      }
+      else
+      {
+        printf("\nPlease create your account!!!");
+      }
+      break;
+    case 4:
+      if (!flag)
+      {
+        check_bal();
+      }
+      else
+      {
+        printf("\nPlease create your account!!!");
+      }
+      break;
+    case 5:
+      exitFun();
+      break;
+
+    default:
+      printf("\nInvalid input");
+      return 0;
+    }
+
+  } while (choice != 5);
+}
+void create_acc()
+{
+  printf("\nAccount created successfully with initial balance of Rs. 2000.");
+}
+void deposit_amt(int amt)
+{
+  if (amt <= 0)
+  {
+    printf("\nInvalid amount to depsoit");
+  }
+  else
+  {
+    curr_bal += amt;
+    printf("\nRs. %d deposited successfully.", amt);
+    check_bal();
+  }
+}
+void withdraw_amt(int amt)
+{
+  if (amt <= 0)
+  {
+    printf("\nInvalid amount to withdrawal");
+  }
+  else if (curr_bal < amt)
+  {
+    printf("\nInsufficient Funds");
+  }
+  else
+  {
+    curr_bal -= amt;
+    printf("\nRs. %d withdrawn successfully.", amt);
+    check_bal();
+  }
+}
+
+void check_bal()
+{
+  printf("\nYour current balance is: Rs. %d", curr_bal);
+}
+void exitFun()
+{
+  printf("\nThank you for using our bankning system.");
+}
+----------------------------------------------------------------------------------
+#include <stdio.h>
+#include <math.h>
+#include <stdbool.h>
+
+bool armstrong(int n);
+int countDigits(int n);
+
+int main()
+{
+    printf("Armstrong numbers between 100 and 10000 are:\n");
+    armstrong(0);
+    return 0;
+}
+
+bool armstrong(int n)
+{
+    int n1, rem, result, digits;
+
+    for (n = 100; n <= 10000; n++)
+    {
+        n1 = n;
+        result = 0;
+        digits = countDigits(n);
+
+        while (n1 != 0)
+        {
+            rem = n1 % 10;
+            result += pow(rem, digits);
+            n1 /= 10;
+        }
+
+        if (result == n)
+        {
+            printf("%d\n", n);
+        }
+    }
+}
+
+int countDigits(int n)
+{
+    int count = 0;
+    while (n != 0)
+    {
+        n /= 10;
+        count++;
+    }
+    return count;
+}
+----------------------------------------------------------------------------------------
+#include <stdio.h>
+int largest(int n);
+int main()
+{
+    int n;
+    printf("Enter array size ");
+    scanf("%d", &n);
+    printf("Enter %d elements ", n);
+    largest(n);
+    return 0;
+}
+
+int largest(int n)
+{
+    int a[n], i, max = 0;
+    for (i = 0; i < n; i++)
+        scanf("%d", &a[i]);
+    for (i = 0; i < n; i++)
+        if (a[i] > max)
+        {
+            max = a[i];
+        }
+    printf("The largest element is : %d", max);
+    return 0;
+}
+----------------------------------------------------------------------------------------------------
+#include <stdio.h>
+
+void swapArrays(int *arr1, int *arr2, int size) {
+    for (int i = 0; i < size; i++) {
+        int temp = arr1[i];
+        arr1[i] = arr2[i];
+        arr2[i] = temp;
+    }
+}
+
+int main() {
+    int size;
+
+    printf("Enter array size: ");
+    scanf("%d", &size);
+
+    int arr1[size], arr2[size];
+
+    printf("Enter %d elements for 1st array: ", size);
+    for (int i = 0; i < size; i++) {
+        scanf("%d", &arr1[i]);
+    }
+
+    printf("Enter %d elements for 2nd array: ", size);
+    for (int i = 0; i < size; i++) {
+        scanf("%d", &arr2[i]);
+    }
+
+    swapArrays(arr1, arr2, size);
+
+    printf("After swapping:\n");
+
+    printf("1st array: ");
+    for (int i = 0; i < size; i++) {
+        printf("%d ", arr1[i]);
+    }
+    printf("\n");
+
+    printf("2nd array: ");
+    for (int i = 0; i < size; i++) {
+        printf("%d ", arr2[i]);
+    }
+    printf("\n");
+
+    return 0;
+}
+---------------------------------------------------------------------------------------------------
+#include <stdio.h>
+
+int sumOfDivisors(int n) {
+    int sum = 0;
+    for (int i = 1; i <= n / 2; i++) {
+        if (n % i == 0) {
+            sum += i;
+        }
+    }
+    return sum;
+}
+
+void findAmicableNumbers(int start, int end) {
+    for (int i = start; i <= end; i++) {
+        int sum1 = sumOfDivisors(i);
+        if (sum1 > i && sum1 <= end) {
+            int sum2 = sumOfDivisors(sum1);
+            if (sum2 == i) {
+                printf("(%d, %d)\n", i, sum1);
+                printf("(%d, %d)\n", sum1, i);
+            }
+        }
+    }
+}
+
+int main() {
+    int start, end;
+    printf("Enter the start of the range: ");
+    scanf("%d", &start);
+    printf("Enter the end of the range: ");
+    scanf("%d", &end);
+    printf("Amicable pairs between %d and %d are:\n", start, end);
+    findAmicableNumbers(start, end);
+    return 0;
+}
+------------------------------------------------------------------------------
+#include <stdio.h>
+
+void create_acc();
+void deposit_amt(int);
+void withdraw_amt(int);
+void check_bal();
+void exitFun();
+
+int curr_bal = 2000, flag = 1;
+
+int main() {
+    int choice, amt = 0;
+    do {
+        printf("\n-------------------------------------------------------");
+        printf("\n----- Bank Account Menu -----");
+        printf("\n1. Create Account");
+        printf("\n2. Deposit Money");
+        printf("\n3. Withdraw Money");
+        printf("\n4. Check Balance");
+        printf("\n5. Exit");
+
+        printf("\nEnter your choice: ");
+        scanf("%d", &choice);
+        switch (choice) {
+            case 1:
+                if (flag) {
+                    create_acc();
+                    flag = 0;
+                } else {
+                    printf("\nAccount already created!!!");
+                }
+                break;
+
+            case 2:
+                if (!flag) {
+                    printf("\nEnter amount to deposit: ");
+                    scanf("%d", &amt);
+                    deposit_amt(amt);
+                } else {
+                    printf("\nPlease create your account!!!");
+                }
+                break;
+
+            case 3:
+                if (!flag) {
+                    printf("\nEnter amount to withdraw: ");
+                    scanf("%d", &amt);
+                    withdraw_amt(amt);
+                } else {
+                    printf("\nPlease create your account!!!");
+                }
+                break;
+
+            case 4:
+                if (!flag) {
+                    check_bal();
+                } else {
+                    printf("\nPlease create your account!!!");
+                }
+                break;
+
+            case 5:
+                exitFun();
+                break;
+
+            default:
+                printf("\nInvalid input");
+                return 0;
+        }
+    } while (choice != 5);
+}
+
+void create_acc() {
+    printf("\nAccount created successfully with initial balance of Rs. 2000.");
+}
+
+void deposit_amt(int amt) {
+    if (amt <= 0) {
+        printf("\nInvalid amount to deposit");
+    } else {
+        curr_bal += amt;
+        printf("\nRs. %d deposited successfully.", amt);
+        check_bal();
+    }
+}
+
+void withdraw_amt(int amt) {
+    if (amt <= 0) {
+        printf("\nInvalid amount to withdrawal");
+    } else if (curr_bal < amt) {
+        printf("\nInsufficient Funds");
+    } else {
+        curr_bal -= amt;
+        printf("\nRs. %d withdrawn successfully.", amt);
+        check_bal();
+    }
+}
+
+void check_bal() {
+    printf("\nYour current balance is: Rs. %d", curr_bal);
+}
+
+void exitFun() {
+    printf("\nThank you for using our banking system.");
+}
+---------------------------------------------------------------------------
